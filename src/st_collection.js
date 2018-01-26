@@ -6,7 +6,11 @@ export default function stCollection({scheme, stream}) {
     list({scheme, stream});
     scheme.constructor.push(
 
+        function (scheme, stream) {
 
+
+
+        }
 
     );
 
