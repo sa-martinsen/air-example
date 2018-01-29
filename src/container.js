@@ -29,7 +29,7 @@ export default function container({scheme, stream, signature}) {
             const loader = new Loader(data);
 
             const scheme = {};
-            
+
             function onload() {
                 plugs.every( plug => plug({ scheme, stream, ...data} ) );
             }
