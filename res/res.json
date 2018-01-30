@@ -6,7 +6,9 @@
     "type": "scene",
     "path": "scene.json"
   }, {
-    "type": "source",
+    "type": "schema",
     "path": "index.js"
+  }, {
+    "type": "view"
   }]
 }

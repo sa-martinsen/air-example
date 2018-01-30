@@ -178,25 +178,10 @@ export default function (scheme, args) {
  * трансформируя их из reinit ({signature}[])
  */
 
-
-/**
- * контроллер списка
- * @param scheme
- * @param args
- */
-export default function list({scheme, stream}) {
-
-    //коллекция компонентов
-    scheme.constructor = [];
-    //управление элементами
-    scheme.item = stream.reducer( ... {} );
-
-}
-
 export default function chips({scheme, stream}) {
 
     //stream => stream to list
-    list({scheme, stream});
+    container({scheme, stream});
     scheme.constructor.push();
 
 }
@@ -206,38 +191,6 @@ export default function chips({scheme, stream}) {
  * сущность цепляется к observable зависимсоти своего уровня и при частичной замене все
  * подписчики получают оповещение о необходимости пересборки
  */
-
-
-
-const scene = {
-
-    tree: [
-
-        {
-            view: "list",
-            model: "./chips",
-            tree: [ {
-
-                //по типу определяется конструктор
-                view: "some",
-
-                //модель всегда выбирается автоматически, исходя из того, какой
-                //необходимо сделать индекс
-                //model: null,
-
-            }, /*{
-
-                если указан путь то требуется предварительная загрузка компонента
-                path: "./some"
-                на самом верхнем уровне сборщик сцен запрашивает
-                файл сцены из app/main/scene.json
-
-            }*/ ]
-        }
-
-    ]
-
-};
 
 
 
