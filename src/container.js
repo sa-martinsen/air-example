@@ -1,4 +1,4 @@
-import {forEachFromData} from "air-stream"
+import {forEachFromData} from "./utils"
 import {Loader, Error} from "m2"
 
 /**
