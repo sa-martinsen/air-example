@@ -35,6 +35,14 @@ export default function container({scheme, stream, signature}) {
             }
 
             stream = stream.withHandler(function (emt, data) {
+
+                //необходимо найти строитель для текущего типа компонента
+                //среди всего списка конструкторов
+
+                //искать до тех пор, пока не будет найден необходимый элемент
+                plugs.find( x => x({}, stream) );
+
+
                 if(!loader.isLoad) {
                     loader.onload.off(onload);
                     loader.onload.on(onload);
