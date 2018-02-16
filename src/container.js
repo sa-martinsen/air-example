@@ -40,15 +40,20 @@ export default function container({scheme, stream, signature}) {
                 //среди всего списка конструкторов
 
                 //искать до тех пор, пока не будет найден необходимый элемент
-                plugs.find( x => x({}, stream) );
+                const cur = plugs.find( x => x({}, stream) );
 
 
-                if(!loader.isLoad) {
+                if(!cur.isLoad) {
                     loader.onload.off(onload);
                     loader.onload.on(onload);
                     return new Error({ type: "MODULE_NOT_READY", event: loader.onload });
                 }
-                emt.emit(data);
+
+                //здесь вызывать уже побочные события. которые дополняют очередь
+                return cur.on( function (evt) {
+                    emt.emit(evt);
+                } );
+
             });
 
             return {scheme, stream};
