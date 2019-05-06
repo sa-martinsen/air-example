@@ -1,7 +1,11 @@
 <unit>
 
-    <unit stream = ./owner onclick = req("call")>
-        <div>clickable</div>
+    <unit stream = ./owner onclick = req("call",{key})>
+        <unit>
+            <unit>
+                <div>clickable</div>
+            </unit>
+        </unit>
     </unit>
 
 </unit>

@@ -4,7 +4,9 @@ export default {
 
     owner: () => stream( (emt, { hook } ) => {
 
-        hook.add( () => {
+        emt([{}]);
+
+        hook.add( ( { key } ) => {
 
             debugger;
 
