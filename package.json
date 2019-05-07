@@ -8,7 +8,7 @@
     "dev": "node --experimental-modules ./node_modules/air-m2-builder2/bin/server.mjs"
   },
   "dependencies": {
-    "air-m2": "https://github.com/artifishional/air-m2.git#v2-ref-kit",
+    "air-m2": "https://github.com/artifishional/air-m2.git#v2-ref",
     "air-schema": "https://github.com/artifishional/air-schema.git#v2-ref"
   },
   "devDependencies": {
