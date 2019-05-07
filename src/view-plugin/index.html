@@ -1,17 +1,37 @@
-<unit>
+<unit stream = ./owner on:my-event = req("some",{event}) >
 
-    <unit stream = ./owner>
+    <unit>
        <view-source>
 
             import { stream } from "m2"
 
-            export default () => {
-                return stream( (emt) => {
-                    emt({});
+            class MyEvent extends Event {
+                constructor() {
+                    super("my-event");
+                    this.myData = 100;
+                }
+                log() {
+                    console.log("check", this);
+                }
+            }
+
+            export default ({ source, targets }) => {
+                return stream( (emt, { over }) => {
+
+                    over.add(source.on((evt, src) => {
+
+                        setTimeout( () => {
+                            targets[0].node.dispatchEvent(new MyEvent());
+                        }, 1000);
+
+                        emt(evt, src);
+
+                    }));
                 } );
             }
 
        </view-source>
+        <div>test</div>
     </unit>
 
 </unit>

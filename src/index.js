@@ -6,9 +6,9 @@ export default {
 
         emt([{}]);
 
-        hook.add( ( { key } ) => {
-
-            debugger;
+        hook.add( ( { key, event } ) => {
+         
+	        event.log();
 
         } );
 
