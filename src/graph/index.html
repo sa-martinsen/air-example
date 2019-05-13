@@ -42,7 +42,7 @@
 
         export default ( { schema } ) => stream( (emt, {sweep}) => {
 
-            sweep.add(schema.get("@$").at( (root) => {
+            sweep.add(schema.get("../@$").at( (root) => {
 
                 const graph = new Parser().parseData(root);
                 const units = sort({ graph });
