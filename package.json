@@ -7,11 +7,12 @@
   "scripts": {
     "dev": "node --experimental-modules ./node_modules/air-m2-builder2/bin/server.mjs"
   },
+  "m2units": {
+    "air-schema-tree": "git+https://github.com/artifishional/air-schema-tree.git"
+  },
   "dependencies": {
     "air-m2": "https://github.com/artifishional/air-m2.git#v2-ref",
-    "air-schema": "https://github.com/artifishional/air-schema.git#v2-ref",
-    "nr-graph": "git+https://github.com/NickRimer03/nr-graph.git",
-    "svg-pan-zoom": "^3.6.0"
+    "air-schema": "https://github.com/artifishional/air-schema.git#v2-ref"
   },
   "devDependencies": {
     "air-application": "^2.0.1"
