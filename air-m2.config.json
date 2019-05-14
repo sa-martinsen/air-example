@@ -1,4 +1,5 @@
 {
   "port": 9005,
-  "entry-unit": "air-example"
+  "entry-unit": "air-example",
+  "latency": [{ "regex": "\\.png", "delay": 5000 }]
 }
