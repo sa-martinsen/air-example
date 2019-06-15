@@ -5,7 +5,7 @@
   "author": "ai.2019",
   "license": "MIT",
   "scripts": {
-    "dev": "node --experimental-modules ./node_modules/air-m2-builder2/bin/server.mjs"
+    "dev": "node --experimental-modules ./node_modules/air-m2-builder2/bin/server.mjs --dev-server"
   },
   "m2units": {
     "air-schema-tree": "git+https://github.com/artifishional/air-schema-tree.git"
