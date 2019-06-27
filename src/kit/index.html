@@ -1,0 +1,32 @@
+<unit>
+
+    <unit stream = @kit kit = (blocks){id} >
+        <unit tee = {type:"blue"}>
+            <unit>
+                <style>
+                    :scope {
+                        width: 100px;
+                        height: 100px;
+                        background-color: blue;
+                        color: white;
+                    }
+                </style>
+                <div><unit>{(msg)}</unit></div>
+            </unit>
+        </unit>
+        <unit tee = {type:"red"}>
+            <unit>
+                <style>
+                    :scope {
+                        width: 100px;
+                        height: 100px;
+                        background-color: red;
+                        color: white;
+                    }
+                </style>
+                <div><unit>{(msg)}</unit></div>
+            </unit>
+        </unit>
+    </unit>
+
+</unit>

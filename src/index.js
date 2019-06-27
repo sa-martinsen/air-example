@@ -1,4 +1,6 @@
 import {stream} from "m2"
+import adaptive from "./adaptive"
+import kit from "./kit"
 
 export default {
 
@@ -22,6 +24,8 @@ export default {
                 emt([{lazydata: 777}]);
             }, 5000 );
         } );
-    }
+    },
+    adaptive,
+    kit,
 
 }
