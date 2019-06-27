@@ -2,16 +2,26 @@ import {stream} from "m2"
 
 export default {
 
-    owner: () => stream( (emt, { hook } ) => {
+    owner() {
+        return stream( (emt, { hook } ) => {
 
-        emt([{}]);
+            emt([{}]);
 
-        hook.add( ( { key, event } ) => {
-         
-	        event.log();
+            hook.add( ( { key, event } ) => {
+
+                event.log();
+
+            } );
 
         } );
 
-    } )
+    },
+    lazy() {
+        return stream( (emt) => {
+            setTimeout( () => {
+                emt([{lazydata: 777}]);
+            }, 5000 );
+        } );
+    }
 
 }
