@@ -1,6 +1,7 @@
 import {stream} from "m2"
 import adaptive from "./adaptive"
 import kit from "./kit"
+import customPathname from "./custom-pathname"
 
 export default {
 
@@ -27,5 +28,6 @@ export default {
     },
     adaptive,
     kit,
+    ["custom-pathname"]: customPathname
 
 }
