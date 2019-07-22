@@ -1,0 +1,18 @@
+<unit stream = ./keyframes>
+    <style>
+        :scope.class-a {
+            color: aquamarine;
+        }
+        :scope.class-b {
+            font-family: Calibri, sans-serif;
+            font-size: 20px;
+        }
+    </style>
+    <keyframe>
+        <key prop = {classList:{'class-a':(a)}}></key>
+    </keyframe>
+    <keyframe>
+        <key prop = {'classList':{'class-b':(b)}}></key>
+    </keyframe>
+    <div>text</div>
+</unit>
