@@ -1,10 +1,12 @@
 import {stream} from "m2"
 import adaptive from "./adaptive"
 import kit from "./kit"
+import keyframes from "./keyframes"
 import customPathname from "./custom-pathname"
 
 export default {
 
+    keyframes,
     owner() {
         return stream( (emt, { hook } ) => {
 
