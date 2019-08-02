@@ -3,6 +3,7 @@ import adaptive from "./adaptive"
 import kit from "./kit"
 import keyframes from "./keyframes"
 import customPathname from "./custom-pathname"
+import animationOffset from "./animation-offset"
 
 export default {
 
@@ -30,6 +31,7 @@ export default {
     },
     adaptive,
     kit,
-    ["custom-pathname"]: customPathname
+    ["custom-pathname"]: customPathname,
+    ["animation-offset"]: animationOffset
 
 }
