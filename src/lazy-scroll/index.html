@@ -1,0 +1,57 @@
+<unit>
+  <style>
+    html, body {
+      height: 100%;
+      padding: 0;
+      margin: 0;
+    }
+
+    .outer {
+      overflow-y: scroll;
+      height: calc(100vh - 30px);
+      width: 95vw;
+    }
+
+    .inner {
+      position: relative;
+      width: 100%;
+    }
+
+    .inner > div {
+      margin-top: 10px;
+      border-top: 1px solid black;
+      width: 100%;
+      height: 80px;
+    }
+
+    .cell {
+      border-radius: 50%;
+      background: #eee;
+      padding: 5px;
+      display: inline-block;
+    }
+  </style>
+
+  <unit stream=@lazy-scroll>
+    <div>
+      <unit onclick = req("update",{key})><button>update</button></unit>
+      <unit onclick = req("regenerate",{key})><button>regenerate</button></unit>
+    </div>
+    <unit lazyscroll>
+      <div class="outer">
+        <div class="inner">
+          <unit kit=(blocks){id}>
+            <div>
+              ID:<unit>`${id}`</unit><br/>
+              <unit kit="(numbers){id}">
+                <div class="cell">
+                  <unit>`${value}`</unit>
+                </div>
+              </unit>
+            </div>
+          </unit>
+        </div>
+      </div>
+    </unit>
+  </unit>
+</unit>
