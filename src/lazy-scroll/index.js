@@ -24,23 +24,24 @@ export default () => stream((emt, { hook }) => {
 
   hook.add(({ action }) => {
     if (action === 'update') {
-        const data = {
-          blocks: Array(50).fill(0).map((_, i) => ({
-            id: i + offset,
-            numbers: Array(20).fill(0).map((_, i) => ({ id: i, value: parseInt(Math.random() * 100) })),
-          }))
-        };
-        emt([data]);
+      const data = {
+        blocks: Array(50).fill(0).map((_, i) => ({
+          id: i + offset,
+          numbers: Array(20).fill(0).map((_, i) => ({ id: i, value: parseInt(Math.random() * 100) })),
+        }))
+      };
+      data.blocks = data.blocks.sort(() => .5 - Math.random());
+      emt([data]);
     }
     if (action === 'regenerate') {
-        offset += 100;
-        const data = {
-          blocks: Array(50).fill(0).map((_, i) => ({
-            id: i + offset,
-            numbers: Array(20).fill(0).map((_, i) => ({ id: i, value: parseInt(Math.random() * 100) })),
-          }))
-        };
-        emt([data]);
+      offset += 100;
+      const data = {
+        blocks: Array(50).fill(0).map((_, i) => ({
+          id: i + offset,
+          numbers: Array(20).fill(0).map((_, i) => ({ id: i, value: parseInt(Math.random() * 100) })),
+        }))
+      };
+      emt([data]);
     }
   });
 });
